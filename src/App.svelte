@@ -51,7 +51,7 @@
 		}
 		todo.del = true;
 		todos = todos.filter(t => t !== todo);
-		removes.push(todo);
+		removes.push(todo); // push splice 等方法不能动态监听，要重新赋值;
 		removes = removes.filter(t => t.del);
 		localStorage.setItem('chaceTodo', JSON.stringify(todos));
 		localStorage.setItem('chaceRe', JSON.stringify(removes));
